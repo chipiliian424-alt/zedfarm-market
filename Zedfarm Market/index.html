@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZedFarm Market — Zambian Farmers Marketplace</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand-wrapper">
+        <a class="brand" href="index.html">
+          <span class="brand-icon" aria-hidden="true">🌾</span>
+          <span><span data-i18n="site.title">ZedFarm Market</span></span>
+          <span class="brand-badge">🇿🇲 Zambia</span>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <div class="toolbar" role="group" aria-label="Audio and language tools">
+          <button type="button" id="readPageBtn" class="read-page-btn" data-i18n="tts.readPage" aria-label="Read this page aloud">🔊 Listen</button>
+          <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
+          <select id="lang-select" aria-label="Select website language">
+            <option value="en">🇿🇲 English</option>
+            <option value="bem">🇿🇲 Chibemba</option>
+            <option value="ny">🇿🇲 ChiNyanja</option>
+          </select>
+        </div>
+
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <nav class="nav" id="main-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+        <a href="browse.html" data-i18n="nav.browse">Browse</a>
+        <a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="login.html" id="nav-login" data-i18n="nav.login">Log in</a>
+        <a href="signup.html" id="nav-signup" class="btn-nav-primary" data-i18n="nav.signup">Sign up</a>
+        <button type="button" id="nav-logout" data-i18n="nav.logout" style="display: none !important;" hidden>Log out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- HERO SECTION -->
+    <section class="hero-wrapper">
+      <div class="container hero">
+        <span class="hero-pill">🌱 Zambia's Online Produce &amp; Livestock Market</span>
+        <h1 data-i18n="home.heroTitle">Welcome to ZedFarm Market</h1>
+        <p data-i18n="home.heroSubtitle">A marketplace connecting Zambian farmers with buyers. Fresh produce, livestock, honey and more.</p>
+
+        <div class="hero-search-card">
+          <form class="search-bar" action="browse.html" method="get" role="search">
+            <label for="home-search" class="sr-only" data-i18n="browse.search">Search</label>
+            <input id="home-search" name="q" type="search" data-i18n-placeholder="browse.searchPlaceholder" placeholder="Search maize, groundnuts, cassava, honey, livestock..." />
+            <button class="btn btn--primary" type="submit" data-i18n="browse.search">🔍 Search Market</button>
+          </form>
+        </div>
+
+        <!-- Quick Category Chips -->
+        <div class="category-chips">
+          <a class="category-chip" href="browse.html?category=maize">🌽 Maize</a>
+          <a class="category-chip" href="browse.html?category=groundnuts">🥜 Groundnuts</a>
+          <a class="category-chip" href="browse.html?category=cassava">🍠 Cassava</a>
+          <a class="category-chip" href="browse.html?category=vegetables">🥬 Vegetables</a>
+          <a class="category-chip" href="browse.html?category=livestock">🐐 Livestock</a>
+          <a class="category-chip" href="browse.html?category=honey">🍯 Pure Honey</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE HIGHLIGHTS -->
+    <section class="container">
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">🚜</div>
+          <div>
+            <h3>Direct From Farmers</h3>
+            <p>Cut out the middlemen. Fair prices for growers and affordable fresh produce for buyers.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">🇿🇲</div>
+          <div>
+            <h3>All 10 Provinces</h3>
+            <p>Browse listings across Lusaka, Copperbelt, Southern, Eastern, Northern and all provinces.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">🔊</div>
+          <div>
+            <h3>Accessible to Everyone</h3>
+            <p>Includes built-in voice screen reading and 3 languages (English, Bemba, and Nyanja).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST LISTINGS -->
+    <section class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title" data-i18n="home.featured">Latest listings</h2>
+          <p style="margin:4px 0 0; color:var(--color-muted);">Fresh harvest and livestock directly from local Zambian producers</p>
+        </div>
+        <a class="btn btn--ghost" href="browse.html">View All Produce →</a>
+      </div>
+
+      <div id="featured" aria-live="polite"></div>
+    </section>
+
+    <!-- FARMER CTA BANNER -->
+    <section class="container" style="margin-top: 48px;">
+      <div class="card" style="background: linear-gradient(135deg, #155e39 0%, #1e4d35 100%); color: #ffffff; padding: 36px 28px; text-align: center; border-radius: var(--radius-lg);">
+        <h2 style="margin: 0 0 10px; font-size: 1.8rem; color:#fff;">Are You a Zambian Farmer?</h2>
+        <p style="max-width: 620px; margin: 0 auto 20px; color: #e2f0e6; font-size: 1.05rem;">
+          Reach thousands of local buyers, hotels, restaurants, and wholesalers. It is 100% free to post your produce on ZedFarm Market.
+        </p>
+        <a class="btn btn--secondary" href="dashboard.html" style="font-size: 1.05rem; padding: 12px 28px;">
+          🌾 Post Your Produce for Free
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span aria-hidden="true">🌾</span>
+        <span>ZedFarm Market</span>
+      </div>
+      <div>
+        <p style="margin: 0;" data-i18n="footer.text">© ZedFarm Market — connecting Zambian farmers and buyers.</p>
+      </div>
+      <div>
+        <span style="font-size:0.85rem; color:#a7f3d0;">Supported Languages: English • Chibemba • ChiNyanja</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="live-region" class="live-region" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Regular classic scripts: work with file:/// and http/https -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
